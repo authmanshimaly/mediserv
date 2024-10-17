@@ -53,8 +53,9 @@ body {
 
 .main-text {
     font-size: 52px;
-    margin:70px 0;
+    /* margin:70px 0; */
     color:#d0595d;
+    font-weight: ;
 }
 .sub-text{
     font-size: 30px;
@@ -72,11 +73,11 @@ body {
 }
 
 .button-group button {
-    padding: 15px 25px;
-    margin: 10px;
+    padding: 25px 35px;
+    margin: 30px;
     font-size: 20px;
     border: none;
-    border-radius: 35px;
+    border-radius: 35px 0px 35px 35px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
