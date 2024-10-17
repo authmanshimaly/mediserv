@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'; 
 import { openWindow, closeWindow, selectWindowRef } from '../Redux/windowSlice'; 
-import { useNavigate } from 'react-router-dom'; // Import useNavigate from React Router
+import { useNavigate } from 'react-router-dom'; 
 import './HistoryPage.css'; 
 import Logo from '../../images/Logo.png';
-import LineImage from '../../images/lineimage.png';
+import LineImage from '../../images/ColoredLine.jpg';
 
 const HistoryPage = () => {
     const [currentVideo, setCurrentVideo] = useState('');
     const windowRef = useSelector(selectWindowRef);
     const dispatch = useDispatch();
-    const navigate = useNavigate(); // Hook for navigation
+    const navigate = useNavigate();
 
     const openVideoWindow = (index) => {
         const videoSrc = getVideoForIndex(index);
@@ -28,7 +28,6 @@ const HistoryPage = () => {
                 </html>
             `);
             newWindow.document.close();
-
         } else {
             windowRef.document.body.innerHTML = '';
             windowRef.document.write(`
@@ -46,7 +45,7 @@ const HistoryPage = () => {
     };
 
     const goBack = () => {
-        navigate('/'); // Navigate back to the home page
+        navigate('/'); 
     };
 
     useEffect(() => {
@@ -62,34 +61,50 @@ const HistoryPage = () => {
             <img src={Logo} alt="Logo" className="logo" />
             <h1 className="history-title">History</h1>
 
-            {/* Render first 7 buttons */}
+            {/* Render top row of buttons */}
             <div className="button-container">
-                {Array.from({ length: 7 }, (_, index) => (
+                {[
+                    { text: '1980', className: 'history-button-gray' },
+                    { text: '1988', className: 'history-button-gray' },
+                    { text: '2000', className: 'history-button-red' },
+                    { text: '2015', className: 'history-button-red' },
+                    { text: '2019', className: 'history-button-red' },
+                    { text: '2021', className: 'history-button-green' },
+                    { text: '2023', className: 'history-button-green' },
+                ].map((button, index) => (
                     <div className="button-wrapper" key={index}>
                         <button
-                            className={`history-button ${getButtonClass(index)}`}
+                            className={`history-button ${button.className}`}
                             onClick={() => openVideoWindow(index)}
                         >
-                            {getButtonText(index)}
+                            {button.text}
                         </button>
                     </div>
                 ))}
             </div>
 
-            {/* Image placed between buttons and back button */}
             <div className="image-container">
                 <img src={LineImage} alt="Line Image" className="centered-image" />
             </div>
 
-            {/* Render last 7 buttons */}
-            <div className="button-container">
-                {Array.from({ length: 7 }, (_, index) => (
+            {/* Render bottom row of buttons */}
+            <div className="button-container2">
+                {[
+                  {text: '' , className:'empty-button'},
+                    { text: '1985', className: 'history-button-gray' },
+                    { text: '1990', className: 'history-button-gray' },
+                    { text: '2005', className: 'history-button-red' },
+                    { text: '2017', className: 'history-button-red' },
+                    { text: '2020', className: 'history-button-green' },
+                    { text: '2022', className: 'history-button-green' },
+                    { text: '2024', className: 'history-button-green' },
+                ].map((button, index) => (
                     <div className="button-wrapper" key={index + 7}>
                         <button
-                            className={`history-button ${getButtonClass(index + 7)}`}
+                            className={`history-button ${button.className}`}
                             onClick={() => openVideoWindow(index + 7)} 
                         >
-                            {getButtonText(index + 7)} 
+                            {button.text} 
                         </button>
                     </div>
                 ))}
@@ -102,26 +117,11 @@ const HistoryPage = () => {
     );
 };
 
-const getButtonText = (index) => {
-    const buttonTexts = [
-        '1980', '1985', '1988', '1990', '2000', '2005', '2015', 
-        '2017', '2019', '2020', '2021', '2022', '2023', '2024',
-    ];
-    return buttonTexts[index];
-};
-
-const getButtonClass = (index) => {
-    if (index < 2) return 'history-button-gray';
-    if (index < 5) return 'history-button-red';
-    return 'history-button-green';
-};
-
 const getVideoForIndex = (index) => {
     const videoSources = [
-        '/videos/1980.mp4', '/videos/1985.mp4', '/videos/1988.mp4', '/videos/1990.mp4',
-        '/videos/2000.mp4', '/videos/2005.mp4', '/videos/2015.mp4', '/videos/2017.mp4',
-        '/videos/2019.mp4', '/videos/2020.mp4', '/videos/2021.mp4', '/videos/2022.mp4',
-        '/videos/2023.mp4', '/videos/2024.mp4',
+        '/videos/1980.mp4', '/videos/1985.mp4', '/videos/2000.mp4', '/videos/2005.mp4',
+        '/videos/2015.mp4', '/videos/2017.mp4', '/videos/2019.mp4', '/videos/2020.mp4',
+        '/videos/2021.mp4', '/videos/2022.mp4', '/videos/2023.mp4', '/videos/2024.mp4',
     ];
     return videoSources[index];
 };

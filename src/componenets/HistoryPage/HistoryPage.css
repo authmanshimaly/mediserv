@@ -15,6 +15,7 @@ body {
     text-align: center;
 }
 
+
 .logo {
     width: 800px; /* Increased width for better visibility */
     margin-bottom: 20px;
@@ -41,10 +42,16 @@ body {
 }
 
 .centered-image {
-    width: 100%; /* Full width of screen */
+    width: 107%; /* Full width of screen */
     height: auto; /* Maintain aspect ratio */
 }
-
+.empty-button {
+    background: transparent; /* Make it transparent */
+    border: none; /* Remove any border */
+    width: 30px; /* Adjust width as needed for spacing */
+    height: 40px; /* Adjust height as needed */
+    visibility: visible; /* Make sure it’s visible */
+}
 .button-container {
     display: grid;
     grid-template-columns: repeat(7, 1fr); /* 7 buttons in each row */
@@ -52,6 +59,17 @@ body {
     margin-top: 0; /* Removed any extra space above the buttons */
     padding: 0; /* Remove padding around the button container */
 }
+.button-container2 {
+
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* 7 buttons in each row */
+    gap: 50px; /* Adjust gap for better spacing */
+    margin-top: 0; /* Remove any extra space above the buttons */
+    padding: 0; /* Remove padding around the button container */
+    justify-items: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+}
+
 
 .button-wrapper {
     display: flex;
@@ -70,24 +88,22 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight:  bold;
 }
 
 .history-button-gray {
-    background-color: #ffffff; /* Gray */
-    color:  #808080;
-    border-color: #808080; /* Match border color with text color */
+  border: 3px solid gray;
+  color: gray;
 }
 
 .history-button-red {
-    background-color: #ffffff; /* Red */
-    color: #d0595d;
-    border-color: #d0595d; /* Match border color with text color */
+    border: 3px solid red;
+    color: red;
 }
 
 .history-button-green {
-    background-color: #ffffff; /* Green */
-    color: #4aba71;
-    border-color: #4aba71; /* Match border color with text color */
+    border: 3px solid green;
+    color: green;
 }
 
 .history-button:hover {
