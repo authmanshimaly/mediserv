@@ -34,7 +34,8 @@ const Home = () => {
             <div className="container">
                 <img src={Logo} alt="Mediserv Logo" className="logo" />
                 
-                <h1 className="main-text">Tap to explore our journey in advancing healthcare</h1>
+                <h1 className="main-text">Welcome</h1>
+                <h3 className="sub-text">Tap to explore our journey in advancing healthcare</h3>
 
                 <div className="button-group">
                     <button className="green" onClick={() => openPage('/AboutMediserv')}>About Mediserv</button>
@@ -42,7 +43,7 @@ const Home = () => {
                     <button className="green" onClick={() => openPage('/MedicalSolutions')}>Medical Solutions</button>
                 </div>
 
-                <p className="sub-text">Devoted to healthcare since 1980.</p>
+                <p className="sub2-text">Devoted to healthcare since 1980.</p>
 
                 <div className="footer-text">
                     <div>
