@@ -30,13 +30,13 @@
 .container-new {
     width: 100%;
     padding: 80px 20px; /* Responsive padding */
-    background-color: white;
+    /* background-color: white; */
 
 }
 
 /* Logo styling */
 .logo-new {
-    width: 600px; /* Set a fixed width for the logo */
+    width: 1100px; /* Set a fixed width for the logo */
     height: auto; /* Maintain aspect ratio */
     margin: 0 auto 30px; /* Center the logo with bottom margin */
 }
@@ -44,35 +44,38 @@
 /* Main text styling */
 .main-text-new {
     font-family: "Century Gothic", "Gothic A1", sans-serif;
-    font-size: 60px; /* Increase font size for main text */
-    margin: 30px 0 40px; /* Vertical margin */
+    font-size: 50px; /* Increase font size for main text */
+    margin: 90px 0 90px; /* Vertical margin */
     color: #4aba71;
     font-weight: 800;
     text-align: center; /* Center the text */
 }
 
 /* Button group styling */
-.button-group-new {
+.button-group-new1 {
     display: flex; /* Flexbox to align buttons in a row */
-    justify-content: center; /* Center buttons */
+    justify-content: space-between; /* Center buttons */
     align-items: center; /* Center buttons vertically */
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
     margin-bottom: 60px;
+    
+    
 }
 
 /* Buttons styling */
 .button-green-new {
-    padding: 20px 40px; /* Increase padding for larger buttons */
+    padding: 35px 65px; /* Increase padding for larger buttons */
     font-size: 30px; /* Larger font size for buttons */
-    margin: 15px; /* Space between buttons */
+    margin: 35px; /* Space between buttons */
+    margin-right: 100px;
     border: 2px solid #4aba71; 
-    border-radius: 30px; /* Rounded corners */
+    border-radius: 55px 0px 55px 55px ; /* Rounded corners */
     transition: background-color 0.3s, transform 0.3s ease;
     color: #4aba71;
     background-color: white;
     text-align: center; /* Center-align text */
     min-height: 80px; /* Set a minimum height for buttons */
-    width: 250px; /* Fixed width for uniformity */
+    width: 300px; /* Fixed width for uniformity */
 }
 
 .button-green-new:hover {

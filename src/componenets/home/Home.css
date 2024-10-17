@@ -1,5 +1,5 @@
 body {
-    font-family: 'Gothic A1', sans-serif;
+    /* font-family: 'Gothic A1', sans-serif; */
     margin: 0;
     overflow: hidden;
     position: relative;
@@ -47,7 +47,7 @@ body {
 }
 
 .logo {
-    width: 950px;
+    width: 1100px;
     height: auto;
 }
 
@@ -55,16 +55,17 @@ body {
     font-size: 52px;
     /* margin:70px 0; */
     color:#d0595d;
-    font-weight: ;
+    font-family: "Century Gothic", sans-serif;
 }
 .sub-text{
-    font-size: 30px;
-    margin: 20px 0;
+    font-size: 200px; 
+    /* margin: 20px 0; */
+    font-family: "Century Gothic", sans-serif;
     color:#d0595d;
 }
 .sub2-text{
     font-size: 30px;
-    margin: 20px 0;
+    /* margin: 20px 0; */
     color:#4aba71;
 }
 
@@ -75,6 +76,7 @@ body {
 .button-group button {
     padding: 25px 35px;
     margin: 30px;
+    margin-right: 90px;
     font-size: 20px;
     border: none;
     border-radius: 35px 0px 35px 35px;
@@ -85,11 +87,14 @@ body {
 .green {
     background-color: #4aba71;
     color: white;
+    font-weight: bold;
 }
 
 .pink {
     background-color: #d0595d;
     color: white;
+    font-weight: bold;
+
 }
 
 .green:hover, .pink:hover {

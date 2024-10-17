@@ -34,15 +34,16 @@ const Home = () => {
             <div className="container">
                 <img src={Logo} alt="Mediserv Logo" className="logo" />
                 
-                <h1 className="main-text">Welcome</h1>
-                <h3 className="sub-text">Tap to explore our journey in advancing healthcare</h3>
+                <p className="main-text">Welcome</p>
+                <p className="sub-text" style={{fontSize:'27px'}}>Tap to explore our journey in advancing healthcare</p>
 
                 <div className="button-group">
-                    <button className="green" style={{borderRadius:''}} onClick={() => openPage('/AboutMediserv')}>About Mediserv</button>
+                    <button className="green"  onClick={() => openPage('/AboutMediserv')}>About Mediserv</button>
                     <button className="pink" onClick={() => openPage('/Services')}>Services</button>
                     <button className="green" onClick={() => openPage('/MedicalSolutions')}>Medical Solutions</button>
                 </div>
 
+                <div style={{height:'55px'}}></div>
                 <p className="sub2-text">Devoted to healthcare since 1980.</p>
 
                 <div className="footer-text">

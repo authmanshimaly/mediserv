@@ -81,7 +81,7 @@ const AboutMediserv = () => {
                 <img src={Logo} className="logo-new" />
                 <h1 className="main-text-new">About Mediserv</h1>
                 
-                <div className="button-group-new">
+                <div className="button-group-new1">
                     {/* Button to open Vision video */}
                     <button
                         className="button-green-new"
