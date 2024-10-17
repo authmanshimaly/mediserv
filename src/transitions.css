@@ -1,0 +1,23 @@
+/* Slide-in/out transitions */
+.page-enter {
+    transform: translateX(100%); /* Start off-screen to the right */
+    opacity: 0; /* Start invisible */
+  }
+  
+  .page-enter-active {
+    transform: translateX(0); /* Move to original position */
+    opacity: 1; /* Fade in */
+    transition: transform 500ms ease-in-out, opacity 500ms ease-in-out; /* Smooth transition */
+  }
+  
+  .page-exit {
+    transform: translateX(0); /* Maintain original position */
+    opacity: 1; /* Fully visible */
+  }
+  
+  .page-exit-active {
+    transform: translateX(-100%); /* Slide out to the left */
+    opacity: 0; /* Fade out */
+    transition: transform 500ms ease-in-out, opacity 500ms ease-in-out; /* Smooth transition */
+  }
+  

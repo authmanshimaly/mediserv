@@ -18,10 +18,19 @@ body {
     opacity: 0;
     animation: fadeInLogo 1s ease forwards;
 }
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 .logo-container img {
-    width: 800px;
+    width: 1100;
     height: auto;
+        animation: fadeIn 2s ease-out; /* Adjust the duration and easing as needed */
 }
 
 h1 {
@@ -35,7 +44,7 @@ h1 {
 }
 
 .container-medical {
-    max-width: 1200px;
+    max-width: 1920px;
     width: 100%;
     padding: 40px;
     background-color: white;
@@ -85,12 +94,11 @@ h1 {
     border: none; /* Remove the border */
     border-radius: 35px;
     color: white; /* Text color to stand out on green background */
-    background-color: #4aba71; /* New background color */
+    background-color:#c7e5ca; /* New background color */
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    padding-left: 1px;
     width: 100%;
 }
 
@@ -221,12 +229,12 @@ h1 {
     }
 
     .container-medical {
-        max-width: 1400px;
+        max-width: 1800px;
         padding: 50px;
     }
 
     .button-group-medical {
-        gap: 30px;
+        column-gap: 130px;
     }
 
     .button-number {

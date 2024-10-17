@@ -1,17 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Provider } from 'react-redux'; // Import the Provider
+import { Provider } from 'react-redux'; // Import the Redux Provider
+import { BrowserRouter as Router } from 'react-router-dom'; // Import Router
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './store'; // Adjust the path to your Redux store
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
-  <Provider store={store}> {/* Wrap App with Provider */}
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+  <Provider store={store}> {/* Wrap App with Redux Provider */}
+    <Router> {/* Wrap App with Router */}
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </Router>
   </Provider>
 );
 
