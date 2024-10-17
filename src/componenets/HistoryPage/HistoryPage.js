@@ -18,7 +18,7 @@ const HistoryPage = () => {
         const videoSrc = getVideoForIndex(index);
 
         if (!windowRef || windowRef.closed) {
-            const newWindow = window.open('', '_blank', 'width=800,height=600');
+            const newWindow = window.open('', '_blank', 'width: 1176px; height: 840px;');
             dispatch(openWindow(newWindow));
 
             newWindow.document.write(`
