@@ -68,10 +68,10 @@ const MedicalSolutions = () => {
 
     return (
         <div className="app-container">
-            <img src={Shape1} alt="Corner Shape" className="corner-image top-left-shape" />
-            <img src={Shape2} alt="Corner Shape" className="corner-image top-right-shape" />
-            <img src={Shape2} alt="Corner Shape" className="corner-image bottom-left-shape" />
-            <img src={Shape1} alt="Corner Shape" className="corner-image bottom-right-shape" />
+            <img src={Shape1} alt="Corner Shape" className="corner-image top-left" style={{width:"300px", height:"300px"}}/>
+            <img src={Shape2} alt="Corner Shape" className="corner-image top-right" style={{width:"300px", height:"300px"}}/>
+            <img src={Shape2} alt="Corner Shape" className="corner-image bottom-left" style={{width:"300px", height:"300px"}}/>
+            <img src={Shape1} alt="Corner Shape" className="corner-image bottom-right" style={{width:"300px", height:"300px"}}/>
             
             <div className="logo-container">
                 <img src={Logo} alt="Medical Solutions Logo" />

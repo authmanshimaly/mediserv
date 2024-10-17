@@ -26,10 +26,10 @@ const Home = () => {
 
     return (
         <div className="app-container">
-            <img src={Shape1} alt="Corner Shape" className="corner-image top-left" />
-            <img src={Shape2} alt="Corner Shape" className="corner-image top-right" />
-            <img src={Shape2} alt="Corner Shape" className="corner-image bottom-left" />
-            <img src={Shape1} alt="Corner Shape" className="corner-image bottom-right" />
+            <img src={Shape1} alt="Corner Shape" className="corner-image top-left" style={{width:"300px", height:"300px"}}/>
+            <img src={Shape2} alt="Corner Shape" className="corner-image top-right" style={{width:"300px", height:"300px"}}/>
+            <img src={Shape2} alt="Corner Shape" className="corner-image bottom-left" style={{width:"300px", height:"300px"}}/>
+            <img src={Shape1} alt="Corner Shape" className="corner-image bottom-right" style={{width:"300px", height:"300px"}}/>
             
             <div className="container">
                 <img src={Logo} alt="Mediserv Logo" className="logo" />
