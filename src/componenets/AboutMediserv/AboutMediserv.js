@@ -49,7 +49,9 @@ const AboutMediserv = () => {
             windowRef.document.close();
         }
     };
-
+    const goBack = () => {
+        navigate('/'); // Adjust the route to match your home page's path
+    };
     useEffect(() => {
         return () => {
             if (windowRef && windowRef.closed) {
@@ -104,9 +106,9 @@ const AboutMediserv = () => {
 
               
              
-            <button className="back-to-home-button" onClick={() => navigate('/')}>
-                Back to Home
-            </button>
+                <button className="button-back" onClick={goBack}>
+                <div className="button-text">Back to Home</div>
+            </button>  
             </div>
         </div>
     );

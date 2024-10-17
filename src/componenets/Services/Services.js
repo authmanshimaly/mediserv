@@ -21,7 +21,9 @@ const Services = () => {
         Logistics: '/videos/Logistics&SupplyChain.mp4',
         After: '/videos/AfterSalesServices.mp4',
     };
-
+    const goBack = () => {
+        navigate('/'); // Adjust the route to match your home page's path
+    };
     const openVideoWindow = (videoKey) => {
         const videoSrc = videos[videoKey]; // Get the video source based on the button clicked
 
@@ -78,9 +80,9 @@ const Services = () => {
             </div>
             
             {/* Back to Home Button */}
-            <button className="back-to-home-button" onClick={() => navigate('/')}>
-                Back to Home
-            </button>
+            <button className="button-back" onClick={goBack}>
+                <div className="button-text">Back to Home</div>
+            </button> 
         </div>
     );
 };

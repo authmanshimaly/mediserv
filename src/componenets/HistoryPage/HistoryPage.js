@@ -118,8 +118,8 @@ const HistoryPage = () => {
             </div>
 
             <button className="button-back" onClick={goBack}>
-                Back to Home
-            </button>
+                <div className="button-text">Back to Home</div>
+            </button> 
         </div>
         </div>
     );

@@ -75,14 +75,11 @@ const MedicalSolutions = () => {
             
             <div className="logo-container">
                 <img src={Logo} alt="Medical Solutions Logo" />
-            </div>
 
             <h1>Medical Solutions</h1>
 
             {/* Button to go back to the home page */}
-            <button className="button-back" onClick={goBack}>
-                <div className="button-text">Back to Home</div>
-            </button>
+            
 
             <div className="container-medical">
                 <div className="button-group-medical">
@@ -96,6 +93,11 @@ const MedicalSolutions = () => {
                     ))}
                 </div>
             </div>
+            </div>
+
+            <button className="button-back" onClick={goBack}>
+                <div className="button-text">Back to Home</div>
+            </button>
         </div>
     );
 };
