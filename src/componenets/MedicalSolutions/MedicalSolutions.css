@@ -71,13 +71,21 @@ h1 {
     margin-right: 15px;
 }
 
+.button-group-medical {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
+    column-gap: 30px; /* Add space between columns */
+    row-gap: 20px; /* Ensure there's space between rows as well */
+}
+
+/* Button styles */
 .button-green-medical {
-    padding: 15px 25px;
+    padding: 35px 100px;
     font-size: 20px;
-    border: 1.5px solid #4aba71;
+    border: none; /* Remove the border */
     border-radius: 35px;
-    color: #4aba71;
-    background-color: white;
+    color: white; /* Text color to stand out on green background */
+    background-color: #4aba71; /* New background color */
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
     display: flex;
@@ -87,7 +95,7 @@ h1 {
 }
 
 .button-green-medical:hover {
-    background-color: #d1e8ff;
+    background-color: #3a9f5a; /* Darker shade on hover */
     transform: scale(1.05);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
@@ -95,7 +103,7 @@ h1 {
 .button-text {
     font-size: 18px;
     font-weight: 600;
-    color: #4aba71;
+    color: white; /* Text color adjusted to white for visibility */
 }
 
 @keyframes fadeInLogo {

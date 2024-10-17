@@ -1,47 +1,42 @@
-/* Services.css */
-
-.services-container1 {
+.services-container {
     max-width: 1400px;
     width: 100%;
     padding: 50px;
-    /* background-color: white; */ 
 }
 
-@keyframes zoomIn {
+@keyframes fadeIn {
     0% {
         opacity: 0;
-        transform: scale(0.8);
     }
     100% {
         opacity: 1;
-        transform: scale(1);
     }
 }
 
-.services-logo {
-    width: 700px;
+/* Apply fade animation to logo */
+.services-logo4 {
+    width: 1100px;
     margin: 0 auto 40px;
-    animation: zoomIn 1s ease-out;
+    animation: fadeIn 2s ease-out; /* Adjust the duration and easing as needed */
 }
 
+/* Main text styling */
 .services-main-text {
     font-family: "Century Gothic", "Gothic A1", sans-serif;
     font-size: 48px;
-    margin-bottom: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     color: #d0595d;
     font-weight: 800;
     text-align: center;
 }
 
+/* Button styling */
 .services-button-group {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
-}
-
-.left-buttons {
-    border-radius: 50px 50px 0px 50px;
 }
 
 .left-buttons,
@@ -58,94 +53,65 @@
 
 .services-button-green {
     padding: 25px 50px;
-    font-size: 24px;
+    font-size: 30px;
     border: 2px solid #d0595d;
-    border-radius: 35px;
     color: #d0595d;
     background-color: white;
     transition: background-color 0.3s, transform 0.5s ease;
+}
+
+/* Add border-radius styling */
+.left-buttons .services-button-green:nth-child(1) {
+    border-radius: 50px 50px 0 50px;
+    margin-bottom: 12px;
+
+}
+.left-buttons .services-button-green:nth-child(2) {
+    border-radius: 50px 0 50px 50px;
+}
+
+.right-buttons .services-button-green:nth-child(1) {
+    border-radius: 50px 50px 50px 0;
+    margin-bottom: 12px;
+}
+.right-buttons .services-button-green:nth-child(2) {
+    border-radius: 0 50px 50px 50px;
+}
+
+.center-button .services-button-green {
+    border-radius: 50px 50px 50px 0;
 }
 
 .services-button-green:hover {
     transform: scale(1.05);
 }
 
-.back-to-home-button {
-    padding: 25px 50px;
-    font-size: 24px;
-    border: 2px solid #d0595d;
-    border-radius: 35px;
+/* Back to Home Button */
+/* Back to Home Button with a mild appearance */
+.button-back4 {
+    padding: 15px 40px;
+    font-size: 20px;
+    border: 1px solid #d59d9f; /* Lighter border color */
+    border-radius: 30px;
+    color: #d0595d; /* Keep the text color consistent with the theme */
+    background-color: #f5f5f5; /* Softer background color */
+    transition: background-color 0.3s, transform 0.3s ease; /* Mild transition */
+    cursor: pointer; /* Add pointer cursor for a better user experience */
+}
+
+.button-back4:hover {
+    background-color: #e9e9e9; /* Subtle hover effect */
+    transform: translateY(-1px); /* Slight hover lift */
+}
+
+.button-back4:active {
+    transform: translateY(0); /* No extra boldness when active */
+}
+
+
+.services-container .services-main-text {
     color: #d0595d;
-    background-color: white;
-    transition: background-color 0.3s, transform 0.5s ease;
-    /* Removed box-shadow */
-}
-
-.back-to-home-button:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-}
-
-.back-to-home-button:active {
-    transform: translateY(0);
-    /* Removed box-shadow */
-}
-
-@keyframes fadeUp {
-    0% {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.services-sub-text {
-    font-size: 28px;
-    color: #d0595d;
-    margin-top: 20px;
-    animation: fadeUp 1s ease-in;
-    text-align: center;
-}
-
-@keyframes rotateIn {
-    0% {
-        opacity: 0;
-        transform: rotate(-180deg);
-    }
-    100% {
-        opacity: 1;
-        transform: rotate(0deg);
-    }
-}
-
-.corner-image {
-    position: absolute;
-    width: 100px;
-    height: 200px;
-    opacity: 1;
-    z-index: 1;
-}
-
-.top-left {
-    top: 4px;
-    left: 4px;
-}
-
-.top-right {
-    top: 0px;
-    right: 0px;
-    transform: rotate(180deg);
-}
-
-.bottom-left {
-    bottom: 0px;
-    left: 0px;
-}
-
-.bottom-right {
-    bottom: 2px;
-    right: 2px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    font-size: 80px;
 }

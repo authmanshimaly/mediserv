@@ -57,31 +57,31 @@ const Services = () => {
     };
 
     return (
-        <div className="services-container1" >
+        <div className="services-container" >
             <img src={Shape1} alt="Corner Shape" className="corner-image top-left" style={{width:"300px", height:"300px"}}/>
             <img src={Shape2} alt="Corner Shape" className="corner-image top-right" style={{width:"300px", height:"300px"}}/>
             <img src={Shape2} alt="Corner Shape" className="corner-image bottom-left" style={{width:"300px", height:"300px"}}/>
             <img src={Shape1} alt="Corner Shape" className="corner-image bottom-right" style={{width:"300px", height:"300px"}}/>
             
-            <img src={Logo} alt="Logo" className="services-logo" />
-            <h1 className="services-main-text">Our Services</h1>
+            <img src={Logo} alt="Logo" className="services-logo4" />
+            <h1 className="services-main-text" >Services</h1>
             <div className="services-button-group">
                 <div className="left-buttons">
-                    <button className="services-button-green" onClick={() => openVideoWindow('Project')}>Project & Turnkey  Solutions</button>
-                    <button className="services-button-green" onClick={() => openVideoWindow('HealthCare')}>Mediserv HealthCare Software</button>
+                    <button className="services-button-green" onClick={() => openVideoWindow('Project')}>Project & Turnkey <br></br> Solutions</button>
+                    <button className="services-button-green" onClick={() => openVideoWindow('HealthCare')}>Mediserv HealthCare <br></br> Software</button>
                 </div>
                 <div className="center-button">
                     <button className="services-button-green" onClick={() => openVideoWindow('Service')}>Service Contracts</button>
                 </div>
                 <div className="right-buttons">
-                    <button className="services-button-green" onClick={() => openVideoWindow('Logistics')}>Logistics & Supply  Chain</button>
-                    <button className="services-button-green" onClick={() => openVideoWindow('After')}>After Sales  Services</button>
+                    <button className="services-button-green" onClick={() => openVideoWindow('Logistics')}>Logistics & Supply <br></br>  Chain</button>
+                    <button className="services-button-green" onClick={() => openVideoWindow('After')}>After Sales <br></br> Services</button>
                 </div>
             </div>
             
             {/* Back to Home Button */}
-            <button className="button-back" onClick={goBack}>
-                <div className="button-text">Back to Home</div>
+            <button className="button-back4" onClick={goBack}>
+                <div className="button-text4">Home</div>
             </button> 
         </div>
     );
