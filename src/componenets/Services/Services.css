@@ -1,0 +1,134 @@
+/* Services.css */
+
+.services-container {
+    max-width: 1400px;
+    width: 100%;
+    padding: 50px;
+    background-color: white;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.services-logo {
+    width: 700px;
+    margin: 0 auto 40px;
+    animation: zoomIn 1s ease-out;
+}
+
+.services-main-text {
+    font-family: "Century Gothic", "Gothic A1", sans-serif;
+    font-size: 48px;
+    margin-bottom: 50px;
+    color: #d0595d;
+    font-weight: 800;
+    text-align: center;
+}
+
+.services-button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.left-buttons,
+.right-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.center-button {
+    display: flex;
+    justify-content: center;
+}
+
+.services-button-green {
+    padding: 25px 50px;
+    font-size: 24px;
+    border: 2px solid #d0595d;
+    border-radius: 35px;
+    color: #d0595d;
+    background-color: white;
+    transition: background-color 0.3s, transform 0.5s ease;
+}
+
+.services-button-green:hover {
+    background-color: #d0595d;
+    transform: scale(1.05);
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.services-sub-text {
+    font-size: 28px;
+    color: #d0595d;
+    margin-top: 20px;
+    animation: fadeUp 1s ease-in;
+    text-align: center;
+}
+
+@keyframes rotateIn {
+    0% {
+        opacity: 0;
+        transform: rotate(-180deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+}
+
+.corner-image {
+    position: absolute;
+    width: 150px;
+    opacity: 1;
+    z-index: 1;
+    animation: rotateIn 1s ease-out;
+}
+.corner-image {
+    position: absolute;
+    width: 100px;
+    opacity: 1;
+    z-index: 1;
+}
+
+.top-left {
+    top: 10px;
+    left: 10px;
+    transform: rotate(180deg);
+}
+
+.top-right {
+    top: 10px;
+    right: 10px;
+}
+
+.bottom-left {
+    bottom: 10px;
+    left: 10px;
+}
+
+.bottom-right {
+    bottom: 10px;
+    right: 10px;
+}

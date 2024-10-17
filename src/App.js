@@ -1,24 +1,26 @@
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import necessary components
 import logo from './logo.svg';
 import './App.css';
+import Home from '../src/componenets/home/Home';
+import MedicalSolutions from './componenets/MedicalSolutions/MedicalSolutions';
+import Services from './componenets/Services/Services';
+import HistoryPage from './componenets/HistoryPage/HistoryPage';
+import AboutMediserv from './componenets/AboutMediserv/AboutMediserv';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/AboutMediserv" element={<AboutMediserv />} />
+          <Route path="/HistoryPage" element={<HistoryPage />} />
+          <Route path="/Services" element={<Services />} />
+          <Route path="/MedicalSolutions" element={<MedicalSolutions />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

@@ -1,0 +1,130 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    width: 800px; /* Increased width for better visibility */
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.05); /* Logo hover effect */
+}
+
+.history-title {
+    font-size: 36px;
+    color: #333;
+    margin: 20px 0;
+    transition: color 0.3s;
+}
+
+.history-title:hover {
+    color: #4aba71; /* Change color on hover */
+}
+
+.image-container {
+    margin: 0; /* No margin to remove space between image and buttons */
+}
+
+.centered-image {
+    width: 100%; /* Full width of screen */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 buttons in each row */
+    gap: 10px; /* Adjust gap if needed, or set it to 0 for no space */
+    padding: 0; /* Remove padding around the button container */
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.history-button {
+    border: 2px solid transparent; /* Default transparent border */
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, border-color 0.3s; /* Added border-color to transition */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.history-button-gray {
+    background-color: white; /* Gray */
+    color:  #808080;
+    border-color: #808080; /* Match border color with text color */
+}
+
+.history-button-red {
+    background-color: white; /* Red */
+    color: #d0595d;
+    border-color: #d0595d; /* Match border color with text color */
+}
+
+.history-button-green {
+    background-color: white; /* Green */
+    color: #4aba71;
+    border-color: #4aba71; /* Match border color with text color */
+}
+
+.history-button:hover {
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+.button-back {
+    padding: 15px 30px;
+    font-size: 20px;
+    border: 2px solid #d0595d;
+    border-radius: 35px;
+    color: white;
+    background-color: #d0595d;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    margin: 20px 0; /* Margin for separation */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button-back:hover {
+    background-color: #f8d6d6;
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Media query for small screens */
+@media (max-width: 600px) {
+    .history-button {
+        width: 60px;
+        height: 60px;
+        font-size: 18px;
+    }
+
+    .history-title {
+        font-size: 28px; /* Smaller title for mobile */
+    }
+
+    .logo {
+        width: 150px; /* Smaller logo for mobile */
+    }
+}

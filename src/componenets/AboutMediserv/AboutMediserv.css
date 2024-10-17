@@ -1,0 +1,146 @@
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.button-back {
+    padding: 15px 30px;
+    font-size: 20px;
+    border: 2px solid #d0595d;
+    border-radius: 35px;
+    color: white;
+    background-color: #d0595d;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    margin: 20px 0; /* Margin for separation */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button-back:hover {
+    background-color: #f8d6d6;
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.container-new {
+    width: 100%;
+    padding: 80px 20px; /* Responsive padding */
+    background-color: white;
+    animation: fadeIn 1s ease-in-out;
+    animation-delay: 0.3s; /* Delay for better effect */
+}
+
+/* Logo with a subtle zoom-in animation */
+.logo-new {
+    width: 900px; /* Further increase logo size */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto 50px; /* Center the logo and add bottom margin */
+}
+
+/* Main text with a slide-in animation */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.main-text-new {
+    font-family: "Century Gothic", "Gothic A1", sans-serif;
+    font-size: 45px; /* Further increase font size for main text */
+    margin: 20px 0 60px; /* Vertical margin */
+    color: #4aba71;
+    font-weight: 800;
+}
+
+/* Button group with staggered button animations */
+.button-group-new {
+    display: flex; /* Flexbox to align buttons in a row */
+    justify-content: center; /* Center buttons */
+    align-items: center; /* Center buttons vertically */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    margin-bottom: 60px;
+}
+
+/* Buttons with hover effects and a bounce-in effect */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.button-green-new {
+    padding: 20px 40px; /* Increase padding for larger buttons */
+    font-size: 35px; /* Larger font size for buttons */
+    margin-top: 2px;
+    margin-right: 80px;
+    margin-left: 200px; /* Space between buttons */
+    border: 2px solid #4aba71; 
+    border-radius: 55px 0px 55px 55px; /* Uniform border radius */
+    transition: background-color 0.3s, transform 0.8s ease;
+    color: #4aba71;
+    background-color: white;
+    text-align: center; /* Center-align text */
+    min-height: 100px; /* Set a minimum height to ensure buttons are equal */
+}
+
+.button-green-new:hover {
+    background-color: #a7dcaa;
+    transform: scale(1.05);
+}
+
+/* Subtext with a gentle fade-in animation */
+.sub-text-new {
+    font-size: 35px; /* Increase subtext size */
+    color: #4aba71;
+    margin: 20px 0; /* Vertical margin */
+    animation: fadeUp 1s ease-in;
+    animation-delay: 1.2s;
+}
+
+/* Corner images with rotation animation */
+.corner-image {
+    position: absolute;
+    width: 150px; /* Adjust corner image size */
+    height: auto; /* Maintain aspect ratio */
+    opacity: 2;
+    z-index: 1;
+    animation: rotateIn 1s ease-out;
+}
+
+.top-left {
+    top: 2px;
+    left: 2px;
+}
+
+.top-right {
+    top: 2px; /* Adjust position if needed */
+    right: 2px;
+}
+
+.bottom-left {
+    bottom: 2px;
+    left: 2px;
+}
+
+.bottom-right {
+    bottom: 2px;
+    right: 2px;
+}

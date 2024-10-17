@@ -1,0 +1,101 @@
+body {
+    font-family: 'Gothic A1', sans-serif;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+}
+
+.corner-image {
+    position: absolute;
+    width: 100px;
+    opacity: 1;
+    z-index: 1;
+}
+
+.top-left {
+    top: 10px;
+    left: 10px;
+    transform: rotate(180deg);
+}
+
+.top-right {
+    top: 10px;
+    right: 10px;
+}
+
+.bottom-left {
+    bottom: 10px;
+    left: 10px;
+}
+
+.bottom-right {
+    bottom: 10px;
+    right: 10px;
+}
+
+.container {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 800px;
+    height: auto;
+}
+
+.main-text {
+    font-size: 32px;
+    margin: 20px 0;
+}
+
+.button-group {
+    margin: 20px 0;
+}
+
+.button-group button {
+    padding: 15px 25px;
+    margin: 10px;
+    font-size: 20px;
+    border: none;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.green {
+    background-color: #4aba71;
+    color: white;
+}
+
+.pink {
+    background-color: #d0595d;
+    color: white;
+}
+
+.green:hover, .pink:hover {
+    opacity: 0.8;
+}
+
+.sub-text {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.footer-text {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.footer-text div {
+    margin: 0 15px;
+    text-align: center;
+}
