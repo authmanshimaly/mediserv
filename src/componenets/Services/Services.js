@@ -67,14 +67,14 @@ const Services = () => {
             <h1 className="services-main-text">Our Services</h1>
             <div className="services-button-group">
                 <div className="left-buttons">
-                    <button className="services-button-green" onClick={() => openVideoWindow('Project')}>Project& Turnkey  Solutions</button>
-                    <button className="services-button-green" onClick={() => openVideoWindow('HealthCare')}>HealthCare Software</button>
+                    <button className="services-button-green" onClick={() => openVideoWindow('Project')}>Project & Turnkey  Solutions</button>
+                    <button className="services-button-green" onClick={() => openVideoWindow('HealthCare')}>Mediserv HealthCare Software</button>
                 </div>
                 <div className="center-button">
                     <button className="services-button-green" onClick={() => openVideoWindow('Service')}>Service Contracts</button>
                 </div>
                 <div className="right-buttons">
-                    <button className="services-button-green" onClick={() => openVideoWindow('Logistics')}>Logistics & Supply  Chanin</button>
+                    <button className="services-button-green" onClick={() => openVideoWindow('Logistics')}>Logistics & Supply  Chain</button>
                     <button className="services-button-green" onClick={() => openVideoWindow('After')}>After Sales  Services</button>
                 </div>
             </div>
