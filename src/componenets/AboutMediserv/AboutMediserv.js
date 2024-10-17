@@ -102,8 +102,11 @@ const AboutMediserv = () => {
 
                 </div>
 
-                {/* Button to go back to the home page */}
-                <button className="button-back" onClick={goHome}>Back to Home</button>
+              
+             
+            <button className="back-to-home-button" onClick={() => navigate('/')}>
+                Back to Home
+            </button>
             </div>
         </div>
     );
