@@ -55,11 +55,11 @@ const Services = () => {
     };
 
     return (
-        <div className="services-container">
-            <img src={Shape1} alt="Corner Shape" className="corner-image top-left" />
-            <img src={Shape2} alt="Corner Shape" className="corner-image top-right" />
-            <img src={Shape2} alt="Corner Shape" className="corner-image bottom-left" />
-            <img src={Shape1} alt="Corner Shape" className="corner-image bottom-right" />
+        <div className="services-container1" >
+            <img src={Shape1} alt="Corner Shape" className="corner-image top-left" style={{width:"300px", height:"300px"}}/>
+            <img src={Shape2} alt="Corner Shape" className="corner-image top-right" style={{width:"300px", height:"300px"}}/>
+            <img src={Shape2} alt="Corner Shape" className="corner-image bottom-left" style={{width:"300px", height:"300px"}}/>
+            <img src={Shape1} alt="Corner Shape" className="corner-image bottom-right" style={{width:"300px", height:"300px"}}/>
             
             <img src={Logo} alt="Logo" className="services-logo" />
             <h1 className="services-main-text">Our Services</h1>
