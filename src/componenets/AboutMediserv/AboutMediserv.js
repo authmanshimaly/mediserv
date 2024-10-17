@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { openWindow, closeWindow, selectWindowRef } from '../Redux/windowSlice'; // Adjust the import path
 import { useNavigate } from 'react-router-dom';
 import './AboutMediserv.css';
+import Logo from '../../images/Logo.png';
+import Shape1 from '../../images/shape1.png';
+import Shape2 from '../../images/shape2.png';
 
 const AboutMediserv = () => {
     const dispatch = useDispatch();
@@ -11,8 +14,8 @@ const AboutMediserv = () => {
 
     // Video URLs (relative to the public folder)
     const videos = {
-        vision: '/videos/video1.mp4', // Path to Vision video
-        flower: '/videos/visionMission.mp4', // Path to Flower video
+        company: '/videos/Company.mp4', // Path to Vision video
+        location: '/videos/Location.mp4', // Path to Flower video
     };
 
     const openVideoWindow = (videoType) => {
@@ -55,44 +58,52 @@ const AboutMediserv = () => {
         };
     }, [dispatch, windowRef]);
 
+    // Function to navigate to the home page
+    const goHome = () => {
+        navigate('/'); // Adjust the route to match your home page's path
+    };
+
     // Function to navigate to the history page
-    const openHistoryPage = () => {
+    const openHistory = () => {
         navigate('/HistoryPage'); // Adjust the route to match your history page's path
     };
 
     return (
         <div>
-            <img src="images/shape1.png" alt="Corner Shape" className="corner-image top-left" />
-            <img src="images/shape2.png" alt="Corner Shape" className="corner-image top-right" />
-            <img src="images/shape2.png" alt="Corner Shape" className="corner-image bottom-left" />
-            <img src="images/shape1.png" alt="Corner Shape" className="corner-image bottom-right" />
+            <img src={Shape1} alt="Corner Shape" className="corner-image top-left-shape" />
+            <img src={Shape2} alt="Corner Shape" className="corner-image top-right-shape" />
+            <img src={Shape2} alt="Corner Shape" className="corner-image bottom-left-shape" />
+            <img src={Shape1} alt="Corner Shape" className="corner-image bottom-right-shape" />
 
             <div className="container-new">
-                <img src="images/Logo.png" alt="Mediserv Logo" className="logo-new" />
+                <img src={Logo} className="logo-new" />
                 <h1 className="main-text-new">About Mediserv</h1>
-                <button className="button-back" onClick={() => window.history.back()}>Back</button>
-
+                
                 <div className="button-group-new">
                     {/* Button to open Vision video */}
                     <button
                         className="button-green-new"
-                        onClick={() => openVideoWindow('vision')}
+                        onClick={() => openVideoWindow('company')}
                     >
-                        Open Vision Video
+                        Company
+                    </button>
+                    {/* Button to open History page */}
+                    <button className="button-green-new" onClick={openHistory}>
+                        History
                     </button>
 
                     {/* Button to open Flower video */}
                     <button
                         className="button-green-new"
-                        onClick={() => openVideoWindow('flower')}
+                        onClick={() => openVideoWindow('location')}
                     >
-                        Open Flower Video
+                        Location
                     </button>
 
-                    <button className="button-history-new" onClick={openHistoryPage}>
-                        Open History
-                    </button>
                 </div>
+
+                {/* Button to go back to the home page */}
+                <button className="button-back" onClick={goHome}>Back to Home</button>
             </div>
         </div>
     );

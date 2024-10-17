@@ -1,31 +1,33 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { openWindow, closeWindow, selectWindowRef } from '../Redux/windowSlice'; // Import the windowRef selector
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './MedicalSolutions.css';
 import Logo from '../../images/Logo.png';
 import Shape1 from '../../images/shape1.png';
 import Shape2 from '../../images/shape2.png';
 
 const MedicalSolutions = () => {
-    const [currentImage, setCurrentImage] = useState('');
+    const [currentVideo, setCurrentVideo] = useState('');
     const windowRef = useSelector(selectWindowRef); // Get the stored window reference from Redux
     const dispatch = useDispatch();
+    const navigate = useNavigate(); // Initialize navigate
 
-    const openImageWindow = (index) => {
-        const imageSrc = getImageForIndex(index);
-        console.log('Image Source:', imageSrc);
+    const openVideoWindow = (index) => {
+        const videoSrc = getVideoForIndex(index);
+        console.log('Video Source:', videoSrc);
 
         if (!windowRef || windowRef.closed) {
             // If there's no window reference or it's closed, open a new window
-            const newWindow = window.open('', '_blank', 'width=800,height=600');
+            const newWindow = window.open('', '_blank', 'width=1176,height=840');
 
             if (newWindow) {
                 dispatch(openWindow(newWindow)); // Store the new window reference in Redux
                 newWindow.document.write(`
                     <html>
-                        <head><title>Image Display</title></head>
+                        <head><title>Video Display</title></head>
                         <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: black;">
-                            <img src="${imageSrc}" alt="Image" style="max-width: 100%; max-height: 100%;"/>
+                            <video src="${videoSrc}" autoplay muted style="width: 1176px; height: 840px;"></video>
                         </body>
                     </html>
                 `);
@@ -39,20 +41,21 @@ const MedicalSolutions = () => {
             windowRef.document.body.innerHTML = '';
             windowRef.document.write(`
                 <html>
-                    <head><title>Image Display</title></head>
+                    <head><title>Video Display</title></head>
                     <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: black;">
-                        <img src="${imageSrc}" alt="Image" style="max-width: 100%; max-height: 100%;"/>
+                        <video src="${videoSrc}" autoplay muted style="width: 1176px; height: 840px;"></video>
                     </body>
                 </html>
             `);
             windowRef.document.close();
         }
 
-        setCurrentImage(imageSrc);
+        setCurrentVideo(videoSrc);
     };
 
+    // Function to navigate back to the home page
     const goBack = () => {
-        console.log('Go back');
+        navigate('/'); // Adjust the route to match your home page's path
     };
 
     useEffect(() => {
@@ -62,7 +65,6 @@ const MedicalSolutions = () => {
             }
         };
     }, [dispatch, windowRef]);
-
 
     return (
         <div className="app-container">
@@ -77,16 +79,17 @@ const MedicalSolutions = () => {
 
             <h1>Medical Solutions</h1>
 
+            {/* Button to go back to the home page */}
             <button className="button-back" onClick={goBack}>
-                <div className="button-text">Back</div>
+                <div className="button-text">Back to Home</div>
             </button>
 
             <div className="container-medical">
                 <div className="button-group-medical">
-                    {Array.from({ length: 14 }, (_, index) => (
+                    {Array.from({ length: 15 }, (_, index) => (
                         <div className="button-wrapper" key={index}>
-                            <div className="button-number">{index + 1}</div>
-                            <button className="button-green-medical" onClick={() => openImageWindow(index)}>
+                            {/* <div className="button-number">{index + 1}</div> */}
+                            <button className="button-green-medical" onClick={() => openVideoWindow(index)}>
                                 <div className="button-text">{getButtonText(index)}</div>
                             </button>
                         </div>
@@ -104,39 +107,41 @@ const getButtonText = (index) => {
         'Laboratory Solutions',
         'Renal Care Solutions',
         'Robotics and Compounding Devices Solutions',
+        'Imaging Solutions',
         'Critical Care Solutions',
         'Surgical Solutions',
         'Endoscopy Solutions',
+        'Digital and Automation Solutions',
         'Diagnostic Solutions',
         'Simulation',
         'Cardiovascular Solutions',
-        'Digital and Automation Solutions',
         'Pharmaceutical Solutions',
-        'Genetics Solutions',
         'Diabetes Solutions',
+        'Genetics Solutions',
     ];
     return buttonTexts[index];
 };
 
-// Function to get the corresponding image source based on index
-const getImageForIndex = (index) => {
-    const imageSources = [
-        require('../../images/9.png'), // Replace with actual image paths
-        require('../../images/10.png'),
-        require('../../images/11.png'),
-        require('../../images/12.png'),
-        require('../../images/13.png'),
-        require('../../images/14.png'),
-        require('../../images/15.png'),
-        require('../../images/16.png'),
-        require('../../images/17.png'),
-        require('../../images/18.png'),
-        require('../../images/19.png'),
-        require('../../images/20.png'),
-        require('../../images/21.png'),
-        require('../../images/22.png'),
+// Function to get the corresponding video source based on index
+const getVideoForIndex = (index) => {
+    const videoSources = [
+        '/videos/abbott.mp4', // Replace these paths with actual video paths
+        '/videos/Loboratory.mp4',
+        '/videos/RenalCare.mp4',
+        '/videos/RobticsandCompounding.mp4',
+        '/videos/Imaging.mp4',
+        '/videos/CiticalCare.mp4',
+        '/videos/SurgicalSolution.mp4',
+        '/videos/Endoscopy.mp4',
+        '/videos/DigtialandAutomation.mp4',
+        '/videos/Diagnostic.mp4',
+        '/videos/SimulationSolution.mp4',
+        '/videos/CardiovascularSolution.mp4',
+        '/videos/PharmaceutialSoultion.mp4',
+        '/videos/Diabeles.mp4',
+        '/videos/GeneticsSolution.mp4',
     ];
-    return imageSources[index]; // Return the URL of the image
+    return videoSources[index]; // Return the URL of the video
 };
 
 export default MedicalSolutions;

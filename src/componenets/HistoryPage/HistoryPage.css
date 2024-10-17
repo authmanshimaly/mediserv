@@ -37,7 +37,7 @@ body {
 }
 
 .image-container {
-    margin: 0; /* No margin to remove space between image and buttons */
+    margin: 0; /* Removed margin around the image */
 }
 
 .centered-image {
@@ -48,7 +48,8 @@ body {
 .button-container {
     display: grid;
     grid-template-columns: repeat(7, 1fr); /* 7 buttons in each row */
-    gap: 10px; /* Adjust gap if needed, or set it to 0 for no space */
+    gap: 20px; /* Adjust gap for better spacing */
+    margin-top: 0; /* Removed any extra space above the buttons */
     padding: 0; /* Remove padding around the button container */
 }
 
@@ -72,19 +73,19 @@ body {
 }
 
 .history-button-gray {
-    background-color: white; /* Gray */
+    background-color: #ffffff; /* Gray */
     color:  #808080;
     border-color: #808080; /* Match border color with text color */
 }
 
 .history-button-red {
-    background-color: white; /* Red */
+    background-color: #ffffff; /* Red */
     color: #d0595d;
     border-color: #d0595d; /* Match border color with text color */
 }
 
 .history-button-green {
-    background-color: white; /* Green */
+    background-color: #ffffff; /* Green */
     color: #4aba71;
     border-color: #4aba71; /* Match border color with text color */
 }
@@ -126,5 +127,9 @@ body {
 
     .logo {
         width: 150px; /* Smaller logo for mobile */
+    }
+
+    .button-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 buttons in each row for smaller screens */
     }
 }
