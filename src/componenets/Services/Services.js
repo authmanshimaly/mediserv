@@ -34,7 +34,7 @@ const Services = () => {
                 <html>
                     <head><title>Video Display</title></head>
                     <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: black;">
-                        <video src="${videoSrc}" autoplay muted playsinline style="width:100%; height:100%;"></video>
+                        <video src="${videoSrc}" autoplay muted playsinline style="width: 1176px; height: 840px;"></video>
                     </body>
                 </html>
             `);
@@ -46,7 +46,7 @@ const Services = () => {
                 <html>
                     <head><title>Video Display</title></head>
                     <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: black;">
-                        <video src="${videoSrc}" autoplay muted playsinline style="width:100%; height:100%;"></video>
+                        <video src="${videoSrc}" autoplay muted playsinline style="width: 1176px; height: 840px;"></video>
                     </body>
                 </html>
             `);
