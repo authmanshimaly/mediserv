@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'; 
 import { openWindow, closeWindow, selectWindowRef } from '../Redux/windowSlice'; // Adjust the import path
 import './HistoryPage.css'; 
@@ -6,12 +6,12 @@ import Logo from '../../images/Logo.png';
 import LineImage from '../../images/lineimage.png';
 
 const HistoryPage = () => {
-    const [currentImage, setCurrentImage] = useState('');
+    const [currentVideo, setCurrentVideo] = useState('');
     const windowRef = useSelector(selectWindowRef); // Get the stored window reference from Redux
     const dispatch = useDispatch();
 
-    const openImageWindow = (index) => {
-        const imageSrc = getImageForIndex(index); // Get the image source based on the button clicked
+    const openVideoWindow = (index) => {
+        const videoSrc = getVideoForIndex(index); // Get the video source based on the button clicked
 
         if (!windowRef || windowRef.closed) {
             // If there's no window reference or it's closed, open a new window
@@ -20,9 +20,9 @@ const HistoryPage = () => {
 
             newWindow.document.write(`
                 <html>
-                    <head><title>Image Display</title></head>
+                    <head><title>Video Display</title></head>
                     <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: black;">
-                        <img src="${imageSrc}" alt="Image" style="max-width: 100%; max-height: 100%;"/>
+                        <video src="${videoSrc}" autoplay muted playsinline style="width:100%; height:100%;"></video>
                     </body>
                 </html>
             `);
@@ -33,16 +33,16 @@ const HistoryPage = () => {
             windowRef.document.body.innerHTML = '';
             windowRef.document.write(`
                 <html>
-                    <head><title>Image Display</title></head>
+                    <head><title>Video Display</title></head>
                     <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: black;">
-                        <img src="${imageSrc}" alt="Image" style="max-width: 100%; max-height: 100%;"/>
+                        <video src="${videoSrc}" autoplay muted playsinline style="width:100%; height:100%;"></video>
                     </body>
                 </html>
             `);
             windowRef.document.close();
         }
 
-        setCurrentImage(imageSrc); // Set the current image for potential future use
+        setCurrentVideo(videoSrc); // Set the current video for potential future use
     };
 
     const goBack = () => {
@@ -56,7 +56,6 @@ const HistoryPage = () => {
             }
         };
     }, [dispatch, windowRef]);
-
 
     return (
         <div className="container">
@@ -72,7 +71,7 @@ const HistoryPage = () => {
                     <div className="button-wrapper" key={index}>
                         <button
                             className={`history-button ${index < 2 ? 'history-button-gray' : index < 5 ? 'history-button-red' : 'history-button-green'}`}
-                            onClick={() => openImageWindow(index)}
+                            onClick={() => openVideoWindow(index)}
                         >
                             {getButtonText(index)}
                         </button>
@@ -90,43 +89,43 @@ const HistoryPage = () => {
 // Function to get button text based on index
 const getButtonText = (index) => {
     const buttonTexts = [
-        'Abbott',
-        'Laboratory Solutions',
-        'Renal Care Solutions',
-        'Robotics and Compounding Devices Solutions',
-        'Critical Care Solutions',
-        'Surgical Solutions',
-        'Endoscopy Solutions',
-        'Diagnostic Solutions',
-        'Simulation',
-        'Cardiovascular Solutions',
-        'Digital and Automation Solutions',
-        'Pharmaceutical Solutions',
-        'Genetics Solutions',
-        'Diabetes Solutions',
+        '1980',
+        '1985',
+        '1988',
+        '1990',
+        '2000',
+        '2005',
+        '2015',
+        '2017',
+        '2019',
+        '2020',
+        '2021',
+        '2022',
+        '2023',
+        '2024',
     ];
     return buttonTexts[index];
 };
 
-// Function to get the corresponding image source based on index
-const getImageForIndex = (index) => {
-    const imageSources = [
-        require('../../images/9.png'), // Adjust paths accordingly
-        require('../../images/10.png'),
-        require('../../images/11.png'),
-        require('../../images/12.png'),
-        require('../../images/13.png'),
-        require('../../images/14.png'),
-        require('../../images/15.png'),
-        require('../../images/16.png'),
-        require('../../images/17.png'),
-        require('../../images/18.png'),
-        require('../../images/19.png'),
-        require('../../images/20.png'),
-        require('../../images/21.png'),
-        require('../../images/22.png'),
+// Function to get the corresponding video source based on index
+const getVideoForIndex = (index) => {
+    const videoSources = [
+        '/videos/1980.mp4', // Replace these paths with actual video paths
+        '/videos/1985.mp4',
+        '/videos/1988.mp4',
+        '/videos/1990.mp4',
+        '/videos/2000.mp4',
+        '/videos/2005.mp4',
+        '/videos/2015.mp4',
+        '/videos/2017.mp4',
+        '/videos/2019.mp4',
+        '/videos/2020.mp4',
+        '/videos/2021.mp4',
+        '/videos/2022.mp4',
+        '/videos/2023.mp4',
+        '/videos/2024.mp4',
     ];
-    return imageSources[index]; // Return the URL of the image
+    return videoSources[index]; // Return the URL of the video
 };
 
 export default HistoryPage;
