@@ -6,7 +6,7 @@ import './AboutMediserv.css';
 import Logo from '../../images/Logo.png';
 import Shape1 from '../../images/shape1.png';
 import Shape2 from '../../images/shape2.png';
-
+import { FaHome } from 'react-icons/fa'; // Importing Home Icon from react-icons
 const AboutMediserv = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -106,9 +106,9 @@ const AboutMediserv = () => {
 
               
              
-                <button className="button-back" onClick={goBack}>
-                <div className="button-text">Back to Home</div>
-            </button>  
+                <button className="button-back10" onClick={goBack}>
+                <FaHome size={24} color="#d6d6d6 " /> {/* Home Icon */}
+            </button> 
             </div>
         </div>
     );

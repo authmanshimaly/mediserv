@@ -7,7 +7,7 @@ import Shape1 from '../../images/shape1.png';
 import Shape2 from '../../images/shape2.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { openWindow, closeWindow, selectWindowRef } from '../Redux/windowSlice'; // Import Redux actions and selector
-
+import { FaHome } from 'react-icons/fa'; // Importing Home Icon from react-icons
 const Services = () => {
     const windowRef = useSelector(selectWindowRef); // Get the stored window reference from Redux
     const dispatch = useDispatch();
@@ -80,9 +80,9 @@ const Services = () => {
             </div>
             
             {/* Back to Home Button */}
-            <button className="button-back4" onClick={goBack}>
-                <div className="button-text4">Home</div>
-            </button> 
+            <button className="button-back10" onClick={goBack}>
+                <FaHome size={24} color="#d6d6d6 " /> {/* Home Icon */}
+            </button>
         </div>
     );
 };
