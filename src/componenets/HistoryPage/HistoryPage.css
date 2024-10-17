@@ -16,8 +16,25 @@ body {
 }
 
 
-.logo {
-    width: 800px; /* Increased width for better visibility */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Apply fade animation to logo */
+.services-logo4 {
+    width: 1100px;
+    margin: 0 auto 40px;
+    animation: fadeIn 2s ease-out; /* Adjust the duration and easing as needed */
+}
+
+.logo10 {
+    width: 1100px; 
+    animation: fadeIn 2s ease-out;/* Increased width for better visibility */
     margin-bottom: 20px;
     transition: transform 0.3s;
 }
@@ -27,9 +44,9 @@ body {
 }
 
 .history-title {
-    font-size: 36px;
-    color: #333;
-    margin: 20px 0;
+    font-size: 46px;
+    color: #4ab970;
+    margin: 70px 0;
     transition: color 0.3s;
 }
 
@@ -42,7 +59,7 @@ body {
 }
 
 .centered-image {
-    width: 107%; /* Full width of screen */
+    width: 100%; /* Full width of screen */
     height: auto; /* Maintain aspect ratio */
 }
 .empty-button {
@@ -78,7 +95,7 @@ body {
 }
 
 .history-button {
-    border: 2px solid transparent; /* Default transparent border */
+    border: 3px solid transparent; /* Default transparent border */
     border-radius: 50%;
     width: 80px;
     height: 80px;
@@ -88,17 +105,69 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight:  bold;
+    font-weight: bold; /* Make text bold */
+    background-color: white; /* Fill the button with white color */
+    color: inherit; /* Inherit the text color from the border color */
 }
 
 .history-button-gray {
-  border: 3px solid gray;
-  color: gray;
+    border: 3px solid gray; /* Border color */
+    color: gray; /* Text color */
+}
+.move-left1980 {
+    margin-left: -90px; /* Adjust the negative margin as needed */
+}
+.move-left1988 {
+    margin-left: -96px; /* Adjust the negative margin as needed */
+}
+.move-left2000 {
+    margin-left: -105px; /* Adjust the negative margin as needed */
+}
+.move-left2015 {
+    margin-left: -119px; /* Adjust the negative margin as needed */
+}
+.move-left2019 {
+    margin-left: -135px; /* Adjust the negative margin as needed */
+}
+.move-left2021 {
+    margin-left: -135px; /* Adjust the negative margin as needed */
+}
+.move-left2023 {
+    margin-left: -152px; /* Adjust the negative margin as needed */
+}
+.move-left1985 {
+    margin-left: -180px; /* Adjust the negative margin as needed */
+}
+.move-left1990 {
+    margin-left: -165px; /* Adjust the negative margin as needed */
+}
+.move-left2005{
+    margin-left: -130px; /* Adjust the negative margin as needed */
+}
+.move-left2017{
+    margin-left: -110px; /* Adjust the negative margin as needed */
+}
+.move-left2020{
+    margin-left: -80px; /* Adjust the negative margin as needed */
+}
+.move-left2022{
+    margin-left: -60px; /* Adjust the negative margin as needed */
+}
+.move-left2024{
+    margin-left: -45px; /* Adjust the negative margin as needed */
 }
 
+
+
+
+
+
+
+
+
 .history-button-red {
-    border: 3px solid red;
-    color: red;
+    border: 3px solid red; /* Border color */
+    color: red; /* Text color */
 }
 
 .history-button-green {
@@ -110,23 +179,25 @@ body {
     transform: scale(1.1); /* Scale up on hover */
 }
 
-.button-back {
-    padding: 15px 30px;
+/* Back to Home Button with a mild appearance */
+.button-back10 {
+    padding: 15px 40px;
     font-size: 20px;
-    border: 2px solid #d0595d;
-    border-radius: 35px;
-    color: white;
-    background-color: #d0595d;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-    margin: 20px 0; /* Margin for separation */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid #d59d9f; /* Lighter border color */
+    border-radius: 30px;
+    color:  #d6d6d6 ;
+    background-color: #f5f5f5; /* Softer background color */
+    transition: background-color 0.3s, transform 0.3s ease; /* Mild transition */
+    cursor: pointer; /* Add pointer cursor for a better user experience */
 }
 
-.button-back:hover {
-    background-color: #f8d6d6;
-    transform: scale(1.05);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+.button-back10:hover {
+    background-color: #e9e9e9; /* Subtle hover effect */
+    transform: translateY(-1px); /* Slight hover lift */
+}
+
+.button-back10:active {
+    transform: translateY(0); /* No extra boldness when active */
 }
 
 /* Media query for small screens */
