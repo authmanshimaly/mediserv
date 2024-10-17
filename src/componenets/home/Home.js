@@ -38,7 +38,7 @@ const Home = () => {
                 <h3 className="sub-text">Tap to explore our journey in advancing healthcare</h3>
 
                 <div className="button-group">
-                    <button className="green" onClick={() => openPage('/AboutMediserv')}>About Mediserv</button>
+                    <button className="green" style={{borderRadius:''}} onClick={() => openPage('/AboutMediserv')}>About Mediserv</button>
                     <button className="pink" onClick={() => openPage('/Services')}>Services</button>
                     <button className="green" onClick={() => openPage('/MedicalSolutions')}>Medical Solutions</button>
                 </div>
