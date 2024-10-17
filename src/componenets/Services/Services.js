@@ -76,7 +76,6 @@ const Services = () => {
                     <button className="services-button-green" onClick={() => openVideoWindow('After')}>After Sales  Services</button>
                 </div>
             </div>
-            <p className="services-sub-text">Delivering excellence in healthcare solutions.</p>
             
             {/* Back to Home Button */}
             <button className="back-to-home-button" onClick={() => navigate('/')}>
