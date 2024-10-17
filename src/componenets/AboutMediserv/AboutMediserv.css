@@ -90,21 +90,21 @@
 }
 
 .top-left-shape {
-    top: 20px; /* Adjust position as needed */
-    left: 20px;
+    top: 0px; /* Adjust position as needed */
+    left: 0px;
 }
 
 .top-right-shape {
-    top: 20px; /* Adjust position if needed */
-    right: 20px;
+    top: 0px; /* Adjust position if needed */
+    right: 0px;
 }
 
 .bottom-left-shape {
-    bottom: 20px;
-    left: 20px;
+    bottom: 0px;
+    left: 0px;
 }
 
 .bottom-right-shape {
-    bottom: 20px;
-    right: 20px;
+    bottom: 0px;
+    right: 0px;
 }

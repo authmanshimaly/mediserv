@@ -145,9 +145,9 @@ h1 {
 .corner-image {
     position: absolute;
     width: 100px;
+    height: 200px;
     opacity: 1;
     z-index: 1;
-    animation: rotateIn 1s ease-out;
 }
 
 .top-left-shape {

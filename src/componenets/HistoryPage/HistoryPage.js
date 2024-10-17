@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import './HistoryPage.css'; 
 import Logo from '../../images/Logo.png';
 import LineImage from '../../images/ColoredLine.jpg';
+import Shape1 from '../../images/shape1.png';
+import Shape2 from '../../images/shape2.png';
 
 const HistoryPage = () => {
     const [currentVideo, setCurrentVideo] = useState('');
@@ -57,6 +59,11 @@ const HistoryPage = () => {
     }, [dispatch, windowRef]);
 
     return (
+        <div className="services-container1" >
+        <img src={Shape1} alt="Corner Shape" className="corner-image top-left" style={{width:"300px", height:"300px"}}/>
+        <img src={Shape2} alt="Corner Shape" className="corner-image top-right" style={{width:"300px", height:"300px"}}/>
+        <img src={Shape2} alt="Corner Shape" className="corner-image bottom-left" style={{width:"300px", height:"300px"}}/>
+        <img src={Shape1} alt="Corner Shape" className="corner-image bottom-right" style={{width:"300px", height:"300px"}}/>
         <div className="container">
             <img src={Logo} alt="Logo" className="logo" />
             <h1 className="history-title">History</h1>
@@ -113,6 +120,7 @@ const HistoryPage = () => {
             <button className="button-back" onClick={goBack}>
                 Back to Home
             </button>
+        </div>
         </div>
     );
 };
