@@ -116,12 +116,16 @@ const HistoryPage = () => {
                             </button>
                         </div>
                     ))}
-                </div>
-
+                </div> 
+                    {/* <div style={{height:'40px'}}></div> */}
+            </div>
+                <button className="button-back"  style={{marginRight:'30px' }} onClick={()=>navigate('/AboutMediserv')}>
+                    <div className="button-text">Back</div>
+                </button>
+                
                 <button className="button-back" onClick={goBack}>
                     <div className="button-text">Back to Home</div>
                 </button>
-            </div>
         </div>
     );
 };
