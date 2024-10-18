@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react'; // Import useState
 import { useDispatch, useSelector } from 'react-redux';
 import { openWindow, closeWindow, selectWindowRef } from '../Redux/windowSlice'; // Adjust the import path
 import { useNavigate } from 'react-router-dom';
@@ -6,11 +6,15 @@ import './AboutMediserv.css';
 import Logo from '../../images/Logo.png';
 import Shape1 from '../../images/shape1.png';
 import Shape2 from '../../images/shape2.png';
-import { FaHome } from 'react-icons/fa'; // Importing Home Icon from react-icons
+import { FaHome ,FaArrowLeft } from 'react-icons/fa'; // Importing Home Icon from react-icons
+
 const AboutMediserv = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const windowRef = useSelector(selectWindowRef); // Get the stored window reference from Redux
+
+    // State to track the active button
+    const [activeButton, setActiveButton] = useState(null);
 
     // Video URLs (relative to the public folder)
     const videos = {
@@ -49,9 +53,11 @@ const AboutMediserv = () => {
             windowRef.document.close();
         }
     };
+
     const goBack = () => {
         navigate('/'); // Adjust the route to match your home page's path
     };
+
     useEffect(() => {
         return () => {
             if (windowRef && windowRef.closed) {
@@ -70,45 +76,66 @@ const AboutMediserv = () => {
         navigate('/HistoryPage'); // Adjust the route to match your history page's path
     };
 
+    // Function to handle button click
+    const handleButtonClick = (buttonName) => {
+        setActiveButton(buttonName); // Set the active button
+    };
+
     return (
         <div>
-            <img src={Shape1} alt="Corner Shape" className="corner-image top-left" style={{width:"300px", height:"300px"}}/>
-            <img src={Shape2} alt="Corner Shape" className="corner-image top-right" style={{width:"300px", height:"300px"}}/>
-            <img src={Shape2} alt="Corner Shape" className="corner-image bottom-left" style={{width:"300px", height:"300px"}}/>
-            <img src={Shape1} alt="Corner Shape" className="corner-image bottom-right" style={{width:"300px", height:"300px"}}/>
+            <img src={Shape1} alt="Corner Shape" className="corner-image top-left" style={{ width: "300px", height: "300px" }} />
+            <img src={Shape2} alt="Corner Shape" className="corner-image top-right" style={{ width: "300px", height: "300px" }} />
+            <img src={Shape2} alt="Corner Shape" className="corner-image bottom-left" style={{ width: "300px", height: "300px" }} />
+            <img src={Shape1} alt="Corner Shape" className="corner-image bottom-right" style={{ width: "300px", height: "300px" }} />
 
             <div className="container-new">
                 <img src={Logo} className="logo-new" />
                 <h1 className="main-text-new">About Mediserv</h1>
-                
+
                 <div className="button-group-new1">
                     {/* Button to open Vision video */}
                     <button
-                        className="button-green-new"
-                        onClick={() => openVideoWindow('company')}
+                        className={`button-green-new ${activeButton === 'company' ? 'active' : ''}`} // Apply active class if clicked
+                        onClick={() => {
+                            openVideoWindow('company');
+                            handleButtonClick('company'); // Set active button
+                        }}
                     >
                         Company
                     </button>
                     {/* Button to open History page */}
-                    <button className="button-green-new" onClick={openHistory}>
+                    <button
+                        className={`button-green-new ${activeButton === 'history' ? 'active' : ''}`} // Apply active class if clicked
+                        onClick={() => {
+                            openHistory();
+                            handleButtonClick('history'); // Set active button
+                        }}
+                    >
                         History
                     </button>
 
                     {/* Button to open Flower video */}
                     <button
-                        className="button-green-new"
-                        onClick={() => openVideoWindow('location')}
+                        className={`button-green-new ${activeButton === 'location' ? 'active' : ''}`} // Apply active class if clicked
+                        onClick={() => {
+                            openVideoWindow('location');
+                            handleButtonClick('location'); // Set active button
+                        }}
                     >
                         Location
                     </button>
-
                 </div>
 
-              
-             <div style={{height:"120px"}}></div>
-                <button className="button-back13" onClick={goBack}>
-                <FaHome size={24} color="#d6d6d6 " /> {/* Home Icon */}
-            </button> 
+                <div style={{ height: "120px" }}></div>
+                <div className="button-row14">
+    <button className="button-back14" onClick={goBack}>
+        <FaArrowLeft size={18} color="#d6d6d6" style={{ marginRight: '8px' }} /> {/* Back Icon */}
+    </button>
+    <button className="button-back14" style={{ marginLeft: '20px' }} onClick={() => navigate('/')}>
+        <FaHome size={24} color="#d6d6d6" /> {/* Home Icon */}
+        <div className="button-text14"></div>
+    </button>
+</div>
             </div>
         </div>
     );

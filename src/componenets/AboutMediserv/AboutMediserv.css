@@ -121,3 +121,8 @@
     bottom: 0px;
     right: 0px;
 }
+.button-green-new.active {
+    background-color: #F75B60; /* Background color when active */
+    color: white; /* Text color when active */
+    border: none;
+}
