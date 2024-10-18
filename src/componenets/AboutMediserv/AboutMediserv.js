@@ -105,8 +105,8 @@ const AboutMediserv = () => {
                 </div>
 
               
-             
-                <button className="button-back10" onClick={goBack}>
+             <div style={{height:"120px"}}></div>
+                <button className="button-back13" onClick={goBack}>
                 <FaHome size={24} color="#d6d6d6 " /> {/* Home Icon */}
             </button> 
             </div>

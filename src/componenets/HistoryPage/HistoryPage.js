@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'; 
 import { openWindow, closeWindow, selectWindowRef } from '../Redux/windowSlice'; 
 import { useNavigate } from 'react-router-dom'; 
-import { FaHome } from 'react-icons/fa'; // Importing Home Icon from react-icons
+import { FaHome } from 'react-icons/fa'; 
 import './HistoryPage.css'; 
 import Logo from '../../images/Logo.png';
 import LineImage from '../../images/NewLine.PNG';
@@ -11,43 +11,44 @@ import Shape2 from '../../images/shape2.png';
 
 const HistoryPage = () => {
     const [currentVideo, setCurrentVideo] = useState('');
+    const [activeButton, setActiveButton] = useState(null); // Manage active button state
     const windowRef = useSelector(selectWindowRef);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const openVideoWindow = (index) => {
-    const videoIndex = index >= 7 ? index - 7 + 7 : index; // Map bottom row indices correctly
-    const videoSrc = getVideoForIndex(videoIndex);
+        setActiveButton(index); // Set the clicked button as active
+        const videoIndex = index >= 7 ? index - 7 + 7 : index; // Map bottom row indices correctly
+        const videoSrc = getVideoForIndex(videoIndex);
 
-    if (!windowRef || windowRef.closed) {
-        const newWindow = window.open('', '_blank', 'width: 1176px; height: 840px;');
-        dispatch(openWindow(newWindow));
+        if (!windowRef || windowRef.closed) {
+            const newWindow = window.open('', '_blank', 'width: 1176px; height: 840px;');
+            dispatch(openWindow(newWindow));
 
-        newWindow.document.write(`
-            <html>
-                <head><title>Video Display</title></head>
-                <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: black;">
-                    <video src="${videoSrc}" autoplay muted playsinline style="width: 1176px; height: 840px;"></video>
-                </body>
-            </html>
-        `);
-        newWindow.document.close();
-    } else {
-        windowRef.document.body.innerHTML = '';
-        windowRef.document.write(`
-            <html>
-                <head><title>Video Display</title></head>
-                <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: black;">
-                    <video src="${videoSrc}" autoplay muted playsinline style="width: 1176px; height: 840px;"></video>
-                </body>
-            </html>
-        `);
-        windowRef.document.close();
-    }
+            newWindow.document.write(`
+                <html>
+                    <head><title>Video Display</title></head>
+                    <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: white;">
+                        <video src="${videoSrc}" autoplay muted playsinline style="width: 100vw; height: 100vh; object-fit: contain;"></video>
+                    </body>
+                </html>
+            `);
+            newWindow.document.close();
+        } else {
+            windowRef.document.body.innerHTML = '';
+            windowRef.document.write(`
+                <html>
+                    <head><title>Video Display</title></head>
+                    <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: white;">
+                        <video src="${videoSrc}" autoplay muted playsinline style="width: 100vw; height: 100vh; object-fit: contain;"></video>
+                    </body>
+                </html>
+            `);
+            windowRef.document.close();
+        }
 
-    setCurrentVideo(videoSrc);
-};
-
+        setCurrentVideo(videoSrc);
+    };
 
     const goBack = () => {
         navigate('/'); 
@@ -75,18 +76,22 @@ const HistoryPage = () => {
                 {/* Render top row of buttons */}
                 <div className="button-container">
                     {[
-                      { text: '1980', className: 'history-button-gray move-left1980' }, 
-                        { text: '1988', className: 'history-button-gray move-left1988'},
-                        { text: '2000', className: 'history-button-red move-left2000'},
-                        { text: '2015', className: 'history-button-red move-left2015' },
-                        { text: '2019', className: 'history-button-red move-left2019' },
-                        { text: '2021', className: 'history-button-green move-left2021' },
-                        { text: '2023', className: 'history-button-green move-left2023' },
+                      { text: '1980', className: 'history-button-gray move-left1980', color: 'gray', darkColor: '#D2D2D2' }, 
+                        { text: '1988', className: 'history-button-gray move-left1988', color: 'gray', darkColor: '#D2D2D2' },
+                        { text: '2000', className: 'history-button-red move-left2000', color: 'red', darkColor: '#CB5252' },
+                        { text: '2015', className: 'history-button-red move-left2015', color: 'red', darkColor: '#CB5252' },
+                        { text: '2019', className: 'history-button-red move-left2019', color: 'red', darkColor: '#CB5252' },
+                        { text: '2021', className: 'history-button-green move-left2021', color: 'green', darkColor: '#69B685' },
+                        { text: '2023', className: 'history-button-green move-left2023', color: 'green', darkColor: '#69B685' },
                     ].map((button, index) => (
                         <div className="button-wrapper" key={index}>
                             <button
                                 className={`history-button ${button.className}`}
                                 onClick={() => openVideoWindow(index)}
+                                style={{
+                                    backgroundColor: activeButton === index ? button.darkColor : 'white',
+                                    color: activeButton === index ? 'white' : button.color,
+                                }}
                             >
                                 {button.text}
                             </button>
@@ -102,18 +107,22 @@ const HistoryPage = () => {
                 <div className="button-container2">
                     {[
                         { className: 'empty-button' },
-                        { text: '1985', className: 'history-button-gray move-left1985' }, 
-                        { text: '1990', className: 'history-button-gray move-left1990' }, 
-                        { text: '2005', className: 'history-button-red move-left2005' },
-                        { text: '2017', className: 'history-button-red move-left2017' },
-                        { text: '2020', className: 'history-button-green move-left2020' },
-                        { text: '2022', className: 'history-button-green move-left2022' },
-                        { text: '2024', className: 'history-button-green move-left2024' },
+                        { text: '1985', className: 'history-button-gray move-left1985', color: 'gray', darkColor: '#D2D2D2' }, 
+                        { text: '1990', className: 'history-button-gray move-left1990', color: 'gray', darkColor: '#D2D2D2' }, 
+                        { text: '2005', className: 'history-button-red move-left2005', color: 'red', darkColor: '#CB5252' },
+                        { text: '2017', className: 'history-button-red move-left2017', color: 'red', darkColor: '#CB5252' },
+                        { text: '2020', className: 'history-button-green move-left2020', color: 'green', darkColor: '#69B685' },
+                        { text: '2022', className: 'history-button-green move-left2022', color: 'green', darkColor: '#69B685' },
+                        { text: '2024', className: 'history-button-green move-left2024', color: 'green', darkColor: '#69B685' },
                     ].map((button, index) => (
                         <div className="button-wrapper" key={index + 7}>
                             <button
                                 className={`history-button ${button.className}`}
                                 onClick={() => openVideoWindow(index + 7)}
+                                style={{
+                                    backgroundColor: activeButton === index + 7 ? button.darkColor : 'white',
+                                    color: activeButton === index + 7 ? 'white' : button.color,
+                                }}
                             >
                                 {button.text}
                             </button>

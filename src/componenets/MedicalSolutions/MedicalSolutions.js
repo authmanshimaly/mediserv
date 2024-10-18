@@ -6,14 +6,17 @@ import './MedicalSolutions.css';
 import Logo from '../../images/Logo.png';
 import Shape1 from '../../images/shape1.png';
 import Shape2 from '../../images/shape2.png';
-import { FaHome } from 'react-icons/fa'; // Importing Home Icon from react-icons
+import { FaHome ,FaArrowLeft } from 'react-icons/fa'; // Importing Home Icon from react-icons
+
 const MedicalSolutions = () => {
     const [currentVideo, setCurrentVideo] = useState('');
+    const [clickedButtonIndex, setClickedButtonIndex] = useState(null); // Track clicked button index
     const windowRef = useSelector(selectWindowRef); // Get the stored window reference from Redux
     const dispatch = useDispatch();
     const navigate = useNavigate(); // Initialize navigate
 
     const openVideoWindow = (index) => {
+        setClickedButtonIndex(index); // Set the clicked button index
         const videoSrc = getVideoForIndex(index);
         console.log('Video Source:', videoSrc);
 
@@ -24,12 +27,12 @@ const MedicalSolutions = () => {
             if (newWindow) {
                 dispatch(openWindow(newWindow)); // Store the new window reference in Redux
                 newWindow.document.write(`
-                    <html>
-                        <head><title>Video Display</title></head>
-                        <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: black;">
-                            <video src="${videoSrc}" autoplay muted style="width: 1176px; height: 840px;"></video>
-                        </body>
-                    </html>
+            <html>
+                <head><title>Video Display</title></head>
+                <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: black;">
+                    <video src="${videoSrc}" autoplay muted playsinline style="width: 150vw; height: 100vh; object-fit: contain;"></video>
+                </body>
+            </html>
                 `);
                 newWindow.document.close();
             } else {
@@ -40,12 +43,12 @@ const MedicalSolutions = () => {
             // Reuse the existing window if it's still open
             windowRef.document.body.innerHTML = '';
             windowRef.document.write(`
-                <html>
-                    <head><title>Video Display</title></head>
-                    <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: black;">
-                        <video src="${videoSrc}" autoplay muted style="width: 1176px; height: 840px;"></video>
-                    </body>
-                </html>
+            <html>
+                <head><title>Video Display</title></head>
+                <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: black;">
+                    <video src="${videoSrc}" autoplay muted playsinline style="width: 150vw; height: 100vh; object-fit: contain;"></video>
+                </body>
+            </html>
             `);
             windowRef.document.close();
         }
@@ -78,15 +81,14 @@ const MedicalSolutions = () => {
 
             <h1>Medical Solutions</h1>
 
-            {/* Button to go back to the home page */}
-            
-
             <div className="container-medical">
                 <div className="button-group-medical">
                     {Array.from({ length: 15 }, (_, index) => (
                         <div className="button-wrapper" key={index}>
-                            {/* <div className="button-number">{index + 1}</div> */}
-                            <button className="button-green-medical" onClick={() => openVideoWindow(index)}>
+                            <button
+                                className={`button-green-medical ${clickedButtonIndex === index ? 'clicked' : ''}`}
+                                onClick={() => openVideoWindow(index)}
+                            >
                                 <div className="button-text">{getButtonText(index)}</div>
                             </button>
                         </div>
@@ -94,10 +96,17 @@ const MedicalSolutions = () => {
                 </div>
             </div>
             </div>
+                                
+            <div className="button-row">
+    <button className="button-back11" style={{ marginRight: '30px' }} onClick={() => navigate('/')}>
+        <FaArrowLeft size={18} color="#d6d6d6" style={{ marginRight: '8px' }} /> {/* Back Icon */}
+        <div className="button-text2"></div>
+    </button>
+    <button className="button-back11" onClick={goBack}>
+        <FaHome size={24} color="#d6d6d6" /> {/* Home Icon */}
+    </button>
+</div>
 
-            <button className="button-back10" onClick={goBack}>
-                <FaHome size={24} color="#d6d6d6 " /> {/* Home Icon */}
-            </button>
         </div>
     );
 };
