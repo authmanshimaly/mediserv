@@ -236,8 +236,8 @@ body {
 }
 
 .top-left {
-    top: 4px;
-    left: 4px;
+    bottom: 15px;
+    right: 15px;;
 }
 
 .top-right {
@@ -252,6 +252,6 @@ body {
 }
 
 .bottom-right {
-    bottom: 4px;
-    right: 4px;
+    bottom: 15px;
+    right: 15px;
 }

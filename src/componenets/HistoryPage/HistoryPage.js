@@ -66,10 +66,10 @@ const HistoryPage = () => {
 
     return (
         <div className="services-container1">
-            <img src={Shape1} alt="Corner Shape" className="corner-image top-left" style={{ width: "300px", height: "300px" }} />
+            <img src={Shape1} alt="Corner Shape" className="corner-image top-left" style={{ width: "200px", height: "200px" }} />
             <img src={Shape2} alt="Corner Shape" className="corner-image top-right" style={{ width: "300px", height: "300px" }} />
             <img src={Shape2} alt="Corner Shape" className="corner-image bottom-left" style={{ width: "300px", height: "300px" }} />
-            <img src={Shape1} alt="Corner Shape" className="corner-image bottom-right" style={{ width: "300px", height: "300px" }} />
+            <img src={Shape1} alt="Corner Shape" className="corner-image bottom-right" style={{ width: "200px", height: "200px" }} />
 
             <div className="container">
                 <img src={Logo} alt="Logo" className="logo10" />

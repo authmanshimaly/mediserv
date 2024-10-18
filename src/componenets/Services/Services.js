@@ -64,10 +64,10 @@ const Services = () => {
 
     return (
         <div className="services-container">
-            <img src={Shape1} alt="Corner Shape" className="corner-image top-left" style={{width:"300px", height:"300px"}}/>
+            <img src={Shape1} alt="Corner Shape" className="corner-image top-left" style={{width:"200px", height:"200px"}}/>
             <img src={Shape2} alt="Corner Shape" className="corner-image top-right" style={{width:"300px", height:"300px"}}/>
             <img src={Shape2} alt="Corner Shape" className="corner-image bottom-left" style={{width:"300px", height:"300px"}}/>
-            <img src={Shape1} alt="Corner Shape" className="corner-image bottom-right" style={{width:"300px", height:"300px"}}/>
+            <img src={Shape1} alt="Corner Shape" className="corner-image bottom-right" style={{width:"200px", height:"200px"}}/>
             
             <img src={Logo} alt="Logo" className="services-logo4" />
             <h1 className="services-main-text">Services</h1>
