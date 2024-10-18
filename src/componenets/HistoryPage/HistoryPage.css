@@ -58,8 +58,8 @@ body {
 }
 
 .centered-image {
-    width: 100%; /* Full width of screen */
-    height: auto; /* Maintain aspect ratio */
+    width: 110%; /* Full width of screen */
+    height: 60%; /* Maintain aspect ratio */
 }
 .empty-button {
     background: transparent; /* Make it transparent */
@@ -74,6 +74,7 @@ body {
     gap: 20px; /* Adjust gap for better spacing */
     margin-top: 0; /* Removed any extra space above the buttons */
     padding: 0; /* Remove padding around the button container */
+    margin-bottom: -6px;
 }
 .button-container2 {
 

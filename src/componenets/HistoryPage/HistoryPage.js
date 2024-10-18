@@ -9,6 +9,7 @@ import LineImage from '../../images/NewLine.PNG';
 import Shape1 from '../../images/shape1.png';
 import Shape2 from '../../images/shape2.png';
 import LineImage2 from '../../images/ColoredLine.jpg'
+import p1 from '../../images/p1.png'
 
 const HistoryPage = () => {
     const [currentVideo, setCurrentVideo] = useState('');
@@ -101,7 +102,7 @@ const HistoryPage = () => {
                 </div>
 
                 <div className="image-container">
-                    <img src={LineImage2} alt="Line Image" className="centered-image" />
+                    <img src={p1} alt="Line Image" className="centered-image" />
                 </div>
 
                 {/* Render bottom row of buttons */}

@@ -33,7 +33,7 @@ const AboutMediserv = () => {
             newWindow.document.write(`
                 <html>
                     <head><title>Video Display</title></head>
-                    <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: black;">
+                    <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: white;">
                         <video src="${videoSrc}" autoplay muted playsinline style="width:100%; height:100%;"></video>
                     </body>
                 </html>
@@ -45,7 +45,7 @@ const AboutMediserv = () => {
             windowRef.document.write(`
                 <html>
                     <head><title>Video Display</title></head>
-                    <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: black;">
+                    <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: white;">
                         <video src="${videoSrc}" autoplay muted playsinline style="width:100%; height:100%;"></video>
                     </body>
                 </html>

@@ -1,28 +1,60 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Home.css'; // Import the CSS file
-import Logo from '../../images/Logo.png'
-import Shape1 from '../../images/shape1.png'
-import Shape2 from '../../images/shape2.png'
+import Logo from '../../images/Logo.png';
+import Shape1 from '../../images/shape1.png';
+import Shape2 from '../../images/shape2.png';
+import { useDispatch, useSelector } from 'react-redux';
+import { openWindow, closeWindow, selectWindowRef } from '../Redux/windowSlice';
 
 const Home = () => {
     const navigate = useNavigate(); // Use useNavigate for navigation
+    const dispatch = useDispatch();
+    const windowRef = useSelector(selectWindowRef);
+    const [imageOpened, setImageOpened] = useState(false);
 
     const openPage = (pageUrl) => {
-        // Save the page URL in local storage
         localStorage.setItem('lastVisitedPage', pageUrl);
         navigate(pageUrl); // Navigate to the page using React Router
     };
 
-    // Optional: Restore the last visited page when the component mounts
-    React.useEffect(() => {
-        const lastVisitedPage = localStorage.getItem('lastVisitedPage');
-        if (lastVisitedPage) {
-            console.log(`Last visited page: ${lastVisitedPage}`); // For debugging purposes
-            // Uncomment the following line to automatically redirect to the last visited page
-            // navigate(lastVisitedPage); 
+    const openImageWindow = () => {
+        if (!windowRef || windowRef.closed) {
+            const newWindow = window.open('', '_blank', 'width=800,height=600');
+            dispatch(openWindow(newWindow));
+
+            newWindow.document.write(`
+                <html>
+                    <head><title>Welcome Image</title></head>
+                    <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: white;">
+                        <img src="${Logo}" alt="Welcome" style="width: 100%; height: auto;" />
+                    </body>
+                </html>
+            `);
+            newWindow.document.close();
+        } else {
+            windowRef.document.body.innerHTML = '';
+            windowRef.document.write(`
+                <html>
+                    <head><title>Welcome Image</title></head>
+                    <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: white;">
+                        <img src="${Logo}" alt="Welcome" style="width: 100%; height: auto;" />
+                    </body>
+                </html>
+            `);
+            windowRef.document.close();
         }
-    }, [navigate]);
+
+        setImageOpened(true);
+    };
+
+    React.useEffect(() => {
+        return () => {
+            if (windowRef && windowRef.closed) {
+                dispatch(closeWindow());
+            }
+        };
+    }, [dispatch, windowRef]);
 
     return (
         <div className="app-container">
@@ -34,7 +66,7 @@ const Home = () => {
             <div className="container">
                 <img src={Logo} alt="Mediserv Logo" className="logo" />
                 
-                <p className="main-text">Welcome</p>
+                <p className="main-text" onClick={openImageWindow} style={{cursor: 'pointer'}}>Welcome</p> 
                 <p className="sub-text" style={{fontSize:'27px'}}>Tap to explore our journey in advancing healthcare</p>
 
                 <div className="button-group">
