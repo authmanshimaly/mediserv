@@ -71,6 +71,8 @@ body {
 
 .button-group {
     margin: 20px 0;
+    margin-left: 45px;
+    width: 1200px;
 }
 
 .button-group button {
@@ -82,19 +84,21 @@ body {
     border-radius: 35px 0px 35px 35px;
     cursor: pointer;
     transition: background-color 0.3s;
+    
 }
 
 .green {
     background-color: #4aba71;
     color: white;
     font-weight: bold;
+    width: 250px;
 }
 
 .pink {
     background-color: #d0595d;
     color: white;
     font-weight: bold;
-
+    width: 250px;
 }
 
 .green:hover, .pink:hover {
