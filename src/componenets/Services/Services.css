@@ -143,7 +143,7 @@
     transform: translateY(-1px); /* Slight hover lift */
 }
 .services-button-green.active {
-    background-color: green; /* Green background */
+    background-color: #69B685; /* Green background */
     color: white;            /* White text color */
-    border-color: green;     /* Optional: change border color to green */
+    border-color: #69B685;     /* Optional: change border color to green */
 }
