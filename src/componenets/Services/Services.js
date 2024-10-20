@@ -40,7 +40,7 @@ const Services = () => {
 
             newWindow.document.write(`
             <html>
-                <head><title>Video Display</title></head>
+                <head><title>MediServ</title></head>
                 <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: white;">
                     <video src="${videoSrc}" autoplay muted playsinline style="width: 150vw; height: 100vh; object-fit: contain;"></video>
                 </body>
@@ -52,7 +52,7 @@ const Services = () => {
             windowRef.document.body.innerHTML = '';
             windowRef.document.write(`
             <html>
-                <head><title>Video Display</title></head>
+                <head><title>MediServ</title></head>
                 <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: white;">
                     <video src="${videoSrc}" autoplay muted playsinline style="width: 150vw; height: 100vh; object-fit: contain;"></video>
                 </body>

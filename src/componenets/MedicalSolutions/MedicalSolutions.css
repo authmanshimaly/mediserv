@@ -207,14 +207,14 @@ h1 {
 }
 
 .top-right-shape {
-    top: 10px;
-    right: 10px;
+    top: 0px;
+    right: 0px;
     transform: rotate(180deg);
 }
 
 .bottom-left-shape {
-    bottom: 10px;
-    left: 10px;
+    bottom: 0px;
+    left: 0px;
     transform: rotate(0deg);
 }
 

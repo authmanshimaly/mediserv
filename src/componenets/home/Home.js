@@ -26,7 +26,7 @@ const Home = () => {
 
             newWindow.document.write(`
                 <html>
-                    <head><title>Welcome Image</title></head>
+                    <head><title>MediServ</title></head>
                 <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: white;">
                         <img src="${Welcome}" alt="Welcome" style="width: 150vw; height: 100vh; object-fit: contain; />
                     </body>
@@ -37,7 +37,7 @@ const Home = () => {
             windowRef.document.body.innerHTML = '';
             windowRef.document.write(`
                 <html>
-                    <head><title>Welcome Image</title></head>
+                    <head><title>MediServ</title></head>
                 <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: white;">
                         <img src="${Welcome}" alt="Welcome" style="width: 150vw; height: 100vh; object-fit: contain;" />
                     </body>
