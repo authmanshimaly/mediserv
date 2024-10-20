@@ -124,7 +124,7 @@ const getButtonText = (index) => {
         'Endoscopy Solutions',
         'Digital and Automation Solutions',
         'Diagnostic Solutions',
-        'Simulation',
+        'Simulation Solutions',
         'Cardiovascular Solutions',
         'Pharmaceutical Solutions',
         'Diabetes Solutions',
@@ -136,21 +136,21 @@ const getButtonText = (index) => {
 // Function to get the corresponding video source based on index
 const getVideoForIndex = (index) => {
     const videoSources = [
-        '/videos/abbott.mp4', // Replace these paths with actual video paths
-        '/videos/Loboratory.mp4',
-        '/videos/RenalCare.mp4',
-        '/videos/RobticsandCompounding.mp4',
-        '/videos/Imaging.mp4',
-        '/videos/CiticalCare.mp4',
-        '/videos/SurgicalSolution.mp4',
-        '/videos/Endoscopy.mp4',
-        '/videos/DigtialandAutomation.mp4',
-        '/videos/Diagnostic.mp4',
+        '/videos/Abbot.mp4', // Replace these paths with actual video paths
+        '/videos/LaboratorySolution.mp4',
+        '/videos/RenalCareSoultion.mp4',
+        '/videos/Robotics&CompoundingDeviceSolution.mp4',
+        '/videos/ImagingSoultions.mp4',
+        '/videos/CriticalCareSolutions.mp4',
+        '/videos/SurgicalSoultions.mp4',
+        '/videos/EndsCopyandDiagnosticSolutions.mp4',
+        '/videos/DigitalandAutomationSolution.mp4',
+        '/videos/DiagnosticsSoutions.mp4',
         '/videos/SimulationSolution.mp4',
-        '/videos/CardiovascularSolution.mp4',
-        '/videos/PharmaceutialSoultion.mp4',
-        '/videos/Diabeles.mp4',
-        '/videos/GeneticsSolution.mp4',
+        '/videos/CardiovascularSoultion.mp4',
+        '/videos/PharmacaeuticalSolution.mp4',
+        '/videos/DiabetesSolutions.mp4',
+        '/videos/GeneticsSolutions.mp4',
     ];
     return videoSources[index]; // Return the URL of the video
 };

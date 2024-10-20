@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Home.css'; // Import the CSS file
+import Welcome from '../../images/Welcome.png'
 import Logo from '../../images/Logo.png';
 import Shape1 from '../../images/shape1.png';
 import Shape2 from '../../images/shape2.png';
@@ -26,8 +27,8 @@ const Home = () => {
             newWindow.document.write(`
                 <html>
                     <head><title>Welcome Image</title></head>
-                    <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: white;">
-                        <img src="${Logo}" alt="Welcome" style="width: 100%; height: auto;" />
+                <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: white;">
+                        <img src="${Welcome}" alt="Welcome" style="width: 150vw; height: 100vh; object-fit: contain; />
                     </body>
                 </html>
             `);
@@ -37,8 +38,8 @@ const Home = () => {
             windowRef.document.write(`
                 <html>
                     <head><title>Welcome Image</title></head>
-                    <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: white;">
-                        <img src="${Logo}" alt="Welcome" style="width: 100%; height: auto;" />
+                <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: white;">
+                        <img src="${Welcome}" alt="Welcome" style="width: 150vw; height: 100vh; object-fit: contain;" />
                     </body>
                 </html>
             `);

@@ -17,10 +17,10 @@ const Services = () => {
 
     // Video URLs (relative to the public folder)
     const videos = {
-        Project: '/videos/Project&TurnkeySolution.mp4', // Replace with actual video paths
-        HealthCare: '/videos/MediServHealthcare.mp4',
-        Service: '/videos/Service.mp4',
-        Logistics: '/videos/Logistics&SupplyChain.mp4',
+        Project: '/videos/Project&TurnkeySoultion.mp4', // Replace with actual video paths
+        HealthCare: '/videos/HealthSoftware.mp4',
+        Service: '/videos/ServiceCintracts.mp4',
+        Logistics: '/videos/Logistics&SupplyChaim.mp4',
         After: '/videos/AfterSalesServices.mp4',
     };
 
