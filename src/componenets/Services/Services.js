@@ -25,11 +25,11 @@ const Services = () => {
     };
 
     const goBack = () => {
-        navigate('/'); // Adjust the route to match your home page's path
+        navigate('/'); 
     };
 
     const openVideoWindow = (videoKey, index) => {
-        const videoSrc = videos[videoKey]; // Get the video source based on the button clicked
+        const videoSrc = videos[videoKey]; 
 
         setClickedButtonIndex(index); // Set the clicked button index
 

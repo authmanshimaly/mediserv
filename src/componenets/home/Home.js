@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Home.css'; // Import the CSS file
-import Welcome from '../../images/Welcome.png'
+import Welcome from '../../images/Welcome.png';
 import Logo from '../../images/Logo.png';
 import Shape1 from '../../images/shape1.png';
 import Shape2 from '../../images/shape2.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { openWindow, closeWindow, selectWindowRef } from '../Redux/windowSlice';
+
 
 const Home = () => {
     const navigate = useNavigate(); // Use useNavigate for navigation
@@ -20,15 +21,17 @@ const Home = () => {
     };
 
     const openImageWindow = () => {
+        const imgSrc = Welcome; // Directly use the imported image URL
+    
         if (!windowRef || windowRef.closed) {
             const newWindow = window.open('', '_blank', 'width=800,height=600');
             dispatch(openWindow(newWindow));
-
+    
             newWindow.document.write(`
                 <html>
                     <head><title>MediServ</title></head>
-                <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: white;">
-                        <img src="${Welcome}" alt="Welcome" style="width: 150vw; height: 100vh; object-fit: contain; />
+                    <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: white;">
+                        <img src="${imgSrc}" alt="Welcome" style="width: 150vw; height: 100vh; object-fit: contain;" />
                     </body>
                 </html>
             `);
@@ -38,16 +41,18 @@ const Home = () => {
             windowRef.document.write(`
                 <html>
                     <head><title>MediServ</title></head>
-                <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: white;">
-                        <img src="${Welcome}" alt="Welcome" style="width: 150vw; height: 100vh; object-fit: contain;" />
+                    <body style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: white;">
+                        <img src="${imgSrc}" alt="Welcome" style="width: 150vw; height: 100vh; object-fit: contain;" />
                     </body>
                 </html>
             `);
             windowRef.document.close();
         }
-
+    
         setImageOpened(true);
     };
+    
+    
 
     React.useEffect(() => {
         return () => {
