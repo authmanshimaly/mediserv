@@ -16,7 +16,7 @@ const Home = () => {
 
     const openPage = (pageUrl) => {
         localStorage.setItem('lastVisitedPage', pageUrl);
-        navigate(pageUrl); // Navigate to the page using React Router
+        navigate(pageUrl); // Navigate to the page using React Route
     };
 
     const openImageWindow = () => {
